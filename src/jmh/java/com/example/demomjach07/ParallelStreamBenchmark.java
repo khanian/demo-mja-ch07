@@ -28,7 +28,8 @@ public class ParallelStreamBenchmark {
     @Benchmark
     public long sequentialSum() {
         return Stream.iterate(1L, i -> i + 1)
-                .limit(N).reduce(0L, Long::sum);
+                .limit(N)
+                .reduce(0L, Long::sum);
     }
 
     @Benchmark
